@@ -19,7 +19,28 @@
       <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">{{$data["message"]["partner"]}}</span>
      
     </div>
-
+    @if($data["message"]["last"])
+    <table class="w-full mt-3 text-sm text-left border-t border-gray-200">
+      <thead class="text-gray-500">
+        <tr>
+          <th class="py-1">Дата</th>
+          <th class="py-1">Контрагент</th>
+          <th class="py-1">К-во</th>
+          <th class="py-1">Сумма</th>
+        </tr>
+      </thead>
+      <tbody>
+     
+        <tr class="border-t border-gray-100">
+          <td class="py-2">{{$data["message"]["last"]["data"]}}</td>
+          <td class="py-2">{{$data["message"]["last"]["partner"]}}</td>
+          <td class="py-2">{{$data["message"]["last"]["qty"]}}</td>
+          <td class="py-2">{{$data["message"]["last"]["total"]}}</td>
+        </tr>
+        
+      </tbody>
+    </table>
+    @endif
     <!-- Stock -->
     <table class="w-full mt-3 text-sm text-left border-t border-gray-200">
       <thead class="text-gray-500">
@@ -56,28 +77,7 @@
       </tbody>
     </table>
 
-    @if($data["message"]["last"])
-    <table class="w-full mt-3 text-sm text-left border-t border-gray-200">
-      <thead class="text-gray-500">
-        <tr>
-          <th class="py-1">Дата</th>
-          <th class="py-1">Контрагент</th>
-          <th class="py-1">К-во</th>
-          <th class="py-1">Сумма</th>
-        </tr>
-      </thead>
-      <tbody>
-     
-        <tr class="border-t border-gray-100">
-          <td class="py-2">{{$data["message"]["last"]["data"]}}</td>
-          <td class="py-2">{{$data["message"]["last"]["partner"]}}</td>
-          <td class="py-2">{{$data["message"]["last"]["qty"]}}</td>
-          <td class="py-2">{{$data["message"]["last"]["total"]}}</td>
-        </tr>
-        
-      </tbody>
-    </table>
-    @endif
+    
 
 
     @else
