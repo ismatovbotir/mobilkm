@@ -12,7 +12,7 @@ class Barcode extends Component
 
     public function mount(){
         $this->data=[
-            "status"=>200,
+            "status"=>201,
             "message"=>"Shtrixkod oqiting"
         ];
     }
