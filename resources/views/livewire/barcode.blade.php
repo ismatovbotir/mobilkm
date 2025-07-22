@@ -55,6 +55,30 @@
         @endforeach
       </tbody>
     </table>
+
+    @if($data["message"]["last"])
+    <table class="w-full mt-3 text-sm text-left border-t border-gray-200">
+      <thead class="text-gray-500">
+        <tr>
+          <th class="py-1">Дата</th>
+          <th class="py-1">Контрагент</th>
+          <th class="py-1">К-во</th>
+          <th class="py-1">Сумма</th>
+        </tr>
+      </thead>
+      <tbody>
+     
+        <tr class="border-t border-gray-100">
+          <td class="py-2">{{$data["message"]["last"]["data"]}}</td>
+          <td class="py-2">{{$data["message"]["last"]["partner"]}}</td>
+          <td class="py-2">{{$data["message"]["last"]["qty"]}}</td>
+          <td class="py-2">{{$data["message"]["last"]["total"]}}</td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+
     @else
     <div class="text-lg font-semibold text-gray-800">{{$data["message"]}}</div>
     @endif  
