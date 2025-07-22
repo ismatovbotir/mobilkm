@@ -11,12 +11,12 @@
   <div class="bg-white rounded-2xl shadow p-4 space-y-2">
     <!-- Название и код -->
     @if($data["status"]==200)
-    <div class="text-lg font-semibold text-gray-800">{{$data["name"]}}</div>
-    <div class="text-sm text-gray-500">Код: {{$data["code"]}}</div>
+    <div class="text-lg font-semibold text-gray-800">{{$data["message"]["name"]}}</div>
+    <div class="text-sm text-gray-500">Код: {{$data["message"]["code"]}}</div>
 
     <!-- Labels -->
     <div class="flex flex-wrap gap-2 mt-2">
-      <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">{{data["partner"]}}</span>
+      <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">{{data["message"]["partner"]}}</span>
      
     </div>
 
@@ -29,7 +29,7 @@
         </tr>
       </thead>
       <tbody>
-        @foreach($data["stock"] as $stock)
+        @foreach($data["message"]["stock"] as $stock)
         <tr class="border-t border-gray-100">
           <td class="py-2">{{$stock["name"]}}</td>
           <td class="py-2">{{$stock["value"]}}</td>
@@ -47,7 +47,7 @@
         </tr>
       </thead>
       <tbody>
-      @foreach($data["prices"] as $price)
+      @foreach($data["message"]["prices"] as $price)
         <tr class="border-t border-gray-100">
           <td class="py-2">{{$price["name"]}}</td>
           <td class="py-2">{{$price["value"]}}</td>
