@@ -16,7 +16,7 @@
 
     <!-- Labels -->
     <div class="flex flex-wrap gap-2 mt-2">
-      <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">{{data["message"]["partner"]}}</span>
+      <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">{{$data["message"]["partner"]}}</span>
      
     </div>
 
