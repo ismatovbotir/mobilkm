@@ -8,7 +8,14 @@ use Illuminate\Support\Facades\Http;
 class Barcode extends Component
 {
     public $barcode;
-    public $body='';
+    public $data;
+
+    public function mount(){
+        $this->data=[
+            "status"=>200,
+            "message"=>"Shtrixkod oqiting"
+        ];
+    }
     public function search(){
        // dd($this->barcode);
        $res = Http::withHeaders([
@@ -18,7 +25,7 @@ class Barcode extends Component
     //dd($res);
     if($res->status()==200){
             $jsonData=$res->json();
-            dd($jsonData);
+            $this->data=$jsonData;
             
             
             //dd($companies);
