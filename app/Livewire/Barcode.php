@@ -14,8 +14,8 @@ class Barcode extends Component
        $res = Http::withHeaders([
         'Authorization' => 'Basic cHJpY2U6cHJpY2U=',
         'Accept' => 'application/json'
-    ])->get('localhost/base/hs/km/'.$this->barcode);
-    dd($res);
+    ])->get('localhost/base25/hs/km/'.$this->barcode);
+    //dd($res);
     if($res->status()==200){
             $jsonData=$res->json();
             dd($jsonData);
