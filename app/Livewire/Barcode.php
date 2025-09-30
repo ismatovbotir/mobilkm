@@ -23,7 +23,7 @@ class Barcode extends Component
         'Authorization' => 'Basic cHJpY2U6cHJpY2U=',
         'Accept' => 'application/json'
     ])->get('localhost/base25/hs/km/'.$this->barcode);
-    dd($res->status());
+    //dd($res->status());
     if($res->status()==200){
             $jsonData=$res->json();
             $this->data=$jsonData;
