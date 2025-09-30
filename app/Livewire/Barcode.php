@@ -9,6 +9,7 @@ class Barcode extends Component
 {
     public $barcode;
     public $data;
+    public $errMessage='';
 
     public function mount(){
         $this->data=[
@@ -29,7 +30,10 @@ class Barcode extends Component
             
             
             //dd($companies);
-    } 
+    } else{
+        dd($res->json());
+        $this->errMessage="error";
+    }
        
        
        $this->reset('barcode');
