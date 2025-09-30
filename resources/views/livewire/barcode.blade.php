@@ -6,7 +6,17 @@
     class="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
     autofocus
   />
- 
+ <!-- Общие ошибки -->
+ @if ($errMessage!='')
+    <div class="bg-red-100 border border-red-400 text-red-700 p-2 rounded mt-2 text-sm">
+      <ul class="list-disc list-inside">
+       
+          <li>{{ $errMessage }}</li>
+       
+      </ul>
+    </div>
+  @endif
+
   <!-- Карточка товара -->
   <div class="bg-white rounded-2xl shadow p-4 space-y-2">
     <!-- Название и код -->
