@@ -22,7 +22,7 @@ class Barcode extends Component
        $res = Http::withHeaders([
         'Authorization' => 'Basic cHJpY2U6cHJpY2U=',
         'Accept' => 'application/json'
-    ])->get('localhost/base25/hs/km/'.$this->barcode);
+    ])->get('localhost/base/hs/km/'.$this->barcode);
     //dd($res->status());
     if($res->status()==200){
             $jsonData=$res->json();
@@ -32,7 +32,7 @@ class Barcode extends Component
             //dd($companies);
     } else{
         //dd($res->json());
-        $this->errMessage="error";
+        $this->errMessage=$res->status()." : error";
     }
        
        
