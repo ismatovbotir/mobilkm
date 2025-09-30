@@ -27,7 +27,7 @@ class Barcode extends Component
     if($res->status()==200){
             $jsonData=$res->json();
             $this->data=$jsonData;
-            
+            $this->errMessage="";
             
             //dd($companies);
     } else{
